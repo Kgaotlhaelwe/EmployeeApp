@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+     EmployeeApp
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+    <ion-slides pager>
+
+        <ion-slide style="background-color: cornflowerblue ; height: 250px;" >
+          <h2>EMPLOYEE APP</h2>
+        
+        </ion-slide>
+      
+        <ion-slide style="background-color: cornflowerblue ;  height: 250px;">
+          
+        </ion-slide>
+      
+      
+      </ion-slides>
+
+    <ion-list>
+
+        <ion-item>
+          <ion-label>ID NO</ion-label>
+          <ion-input type="text"  [(ngModel)]="id"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>FirstName</ion-label>
+          <ion-input type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+      
+
+        <ion-item>
+            <ion-label>LastName</ion-label>
+            <ion-input type="text" [(ngModel)]="lastname"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label>ROLE</ion-label>
+              <ion-input type="text"  [(ngModel)]="role"></ion-input>
+            </ion-item>
+
+
+
+            <ion-item>
+              <ion-label>image</ion-label>
+              <ion-input type="file"  [(ngModel)]="image"></ion-input>
+            </ion-item>
+      </ion-list>
+
+
+      
+     
+
+
+
+
+      
+      <div padding>
+
+        <button ion-button full (click)="AddEmployee()">ADD</button>
+
+
+
+
+        
+
+
+
+          <ion-list   *ngFor="let i of arr ; let a = index "  id="list">
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="{{i.image}}">
+              </ion-avatar>
+              <h2> {{ i.id}}    {{ i.firstname }}  {{i.lastname}} {{i.role}}    &#160; &#160; &#160;  &#160; &#160; &#160;  &#160; &#160; &#160;  &#160; &#160; &#160;  &#160; &#160; &#160;  &#160; &#160; &#160;
+              </h2>
+
+              <ion-icon name="trash" (click)="DeleteEmployee(a)"> </ion-icon>  &#160; &#160; &#160;  &#160;
+
+              <ion-icon name="hammer"  (click)="UpdateEmployee(a)"></ion-icon>
+            
+            </ion-item>
+          </ion-list>
+
+
+
+
+
+       
+      </div>
+  
+ 
+</ion-content>
